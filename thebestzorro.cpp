@@ -2,5 +2,5 @@
 #include "thebestzorro.h"
 
 void the_test() {
-    std::cout<<"Test done.\n";
+    std::cout<<"Hello word. Test done.\n";
 }

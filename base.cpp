@@ -1,4 +1,3 @@
-#include <iostream>
 #include "thebestzorro.h"
 
 int main()
