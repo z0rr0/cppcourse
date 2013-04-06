@@ -1,3 +1,7 @@
+# Temporary objects
+*~
+#*#
+
 # Compiled Object files
 *.slo
 *.lo
@@ -11,3 +15,6 @@
 *.lai
 *.la
 *.a
+
+# Ojbects files
+bin/*
