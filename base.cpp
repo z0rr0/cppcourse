@@ -1,7 +1,8 @@
 #include <iostream>
+#include "thebestzorro.h"
 
 int main()
 {
-    std::cout<<"Test\n";
+    the_test();
     return 0;
 }
