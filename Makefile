@@ -5,14 +5,14 @@ CCFLAGS=-Wall -g
 CLEAN=rm -f
 COPY=cp *.o bin/
 
-$(PROGRAM_NAME): base.o libthebestzorro.a
-	$(CC) $(CCFLAGS) -o $@ $^ -L. -lthebestzorro
+$(PROGRAM_NAME): base.o libcppstyle.a
+	$(CC) $(CCFLAGS) -o $@ $^ -L. -lcppstyle
 	$(COPY)
 base.o: base.cpp
 	$(CC) $(CCFLAGS) -c -o $@ $^
-libthebestzorro.o: thebestzorro.cpp
+libcppstyle.o: cppstyle.cpp
 	$(CC) $(CCFLAGS) -c -o $@ $^
-libthebestzorro.a: libthebestzorro.o
+libcppstyle.a: libcppstyle.o
 	ar crv $@ $^
 clean:
 	$(CLEAN) $(PROGRAM_NAME) *.o *.a

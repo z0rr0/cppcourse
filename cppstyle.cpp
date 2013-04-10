@@ -8,12 +8,28 @@
 #include <vector>
 #include <algorithm>
 #include <ctime>
-#include "thebestzorro.h"
+#include "cppstyle.h"
 
 // ****************
 // Classes
 // ****************
-
+A::A() {
+    name = "class A";
+}
+A::~A() {
+}
+void A::printname() {
+    std::cout<< "Name="<< name<< "\n";
+}
+B::B() {
+    name = "class B";
+}
+B::~B() {
+    name = "class B";
+}
+void B::testb() {
+    std::cout<< "testb\n";
+}
 
 
 // ****************
