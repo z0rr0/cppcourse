@@ -1,22 +1,22 @@
 #include <string>
 // classes
 
-class A
+class ClassA
 {
 public:
-    A();
-    ~A();
+    ClassA();
+    ~ClassA();
 
     void printname();
     std::string name;
     /* data */
 };
 
-class B : public A
+class ClassB : public ClassA
 {
 public:
-    B();
-    ~B();
+    ClassB();
+    ~ClassB();
     void testb();
     // std::string name;
     /* data */

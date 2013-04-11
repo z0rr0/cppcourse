@@ -13,21 +13,21 @@
 // ****************
 // Classes
 // ****************
-A::A() {
+ClassA::ClassA() {
     name = "class A";
 }
-A::~A() {
+ClassA::~ClassA() {
 }
-void A::printname() {
+void ClassA::printname() {
     std::cout<< "Name="<< name<< "\n";
 }
-B::B() {
+ClassB::ClassB() {
     name = "class B";
 }
-B::~B() {
+ClassB::~ClassB() {
     name = "class B";
 }
-void B::testb() {
+void ClassB::testb() {
     std::cout<< "testb\n";
 }
 
@@ -47,7 +47,3 @@ int factorial(const int a) {
     return factorial(a-1) * a;
 }
 
-// ...
-// template<typename T> bynary_search() {
-//     return 0
-// }
