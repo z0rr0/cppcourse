@@ -1,5 +1,4 @@
 #include <string>
-// classes
 
 class ClassA
 {
@@ -7,21 +6,34 @@ public:
     ClassA();
     ~ClassA();
 
-    void printname();
-    std::string name;
     /* data */
+    void printname();
+protected:
+    std::string name_;
+
 };
 
-class ClassB : public ClassA
+class ClassB
 {
+    std::string name_;
+
 public:
     ClassB();
     ~ClassB();
-    void testb();
-    // std::string name;
+
+    /* data */
+};
+
+class ClassC : public ClassA
+{
+public:
+    ClassC();
+    ~ClassC();
+
     /* data */
 };
 
 // methods
 void the_test();
 int factorial(const int a);
+void simple_sorting();

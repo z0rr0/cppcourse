@@ -1,21 +1,67 @@
 #include <iostream>
-#include "cppstyle.h"
-#include "templates.h"
+#include <algorithm>
+#include <iterator>
+#include <set>
+#include <utility>
 
-int main()
+#include "cppstyle.h"
+// #include "templates.h"
+
+#include <chrono>
+#include <thread>
+#include <mutex>
+
+std::mutex g_lock;
+
+void threadFunction()
+{
+     g_lock.lock();
+
+     std::cout << "entered thread " << std::this_thread::get_id() << std::endl;
+     // std::this_thread::sleep_for(std::chrono::seconds(rand()%10));
+     std::this_thread::sleep_for(std::chrono::seconds(2));
+     std::cout << "leaving thread " << std::this_thread::get_id() << std::endl;
+
+     g_lock.unlock();
+}
+
+void hello()
+{
+    std::cout<<"Hello Concurrent World\n";
+}
+
+int main(int argc, char * argv[])
 {
     the_test();
-    std::cout<<"Factorial(5)="<<factorial(5)<<"\n";
-    ClassA a;
-    ClassB b;
-    a.printname();
-    b.printname();
-    std::cout << "\nfinish\n";
-    // int len=20;
-    // double* x;
-    // x = new double[len];
-    // generate_array<double>(x, len);
-    // print_array<double>(x, len);
-    // delete x;
+    ClassA* a;
+    // ClassB* b;
+    ClassC* c;
+    try
+    {
+        a = new ClassA;
+        c = new ClassC;
+    }
+    catch(std::bad_alloc& exc)
+    {
+        std::cout << "allocate error" << std::endl;
+        return 1;
+    }
+    a->printname();
+    c->printname();
+
+    // srand((unsigned int)time(0));
+    std::thread t1(threadFunction);
+    std::thread t2(threadFunction);
+    t1.join();
+    t2.join();
+
+    // std::cout << "please enter int values and pass Ctrl+D" << std::endl;
+    // simple_sorting();
+
+
+    std::cout << "\nfinish"<< std::endl;
+
+    delete a;
+    delete c;
     return 0;
 }
