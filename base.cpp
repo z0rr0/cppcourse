@@ -13,10 +13,10 @@
 
 std::mutex g_lock;
 
+
 void threadFunction()
 {
      g_lock.lock();
-
      std::cout << "entered thread " << std::this_thread::get_id() << std::endl;
      // std::this_thread::sleep_for(std::chrono::seconds(rand()%10));
      std::this_thread::sleep_for(std::chrono::seconds(2));
